@@ -14,6 +14,7 @@ index.html          Home
 services.html       Our services (4 advice pillars + scope of advice)
 about.html          About us — the practice, Dion and Erica, licensing
 contact.html        Contact details, enquiry form, locations
+privacy.html        Privacy Policy
 404.html            Not-found page
 .htaccess           Redirects from the old .shtml URLs, https, caching, security headers
 robots.txt          Search engine directives
@@ -109,6 +110,23 @@ restore the address block on the contact page and the PostalAddress in the struc
 **One phone number, Dion's mobile.** The landline was removed at Dion's request. Erica's mobile is
 still shown on her own profile on the about page only. If they want that gone too it is one line to
 delete.
+
+**The old Privacy Policy link was dead.** Every page of the previous site linked to
+`bettermentfinancialplanning.com.au/privacy-policy.pdf`, which returns a 404 and has done for some
+time. That link is gone. There is now a real `privacy.html` page on the site, built from the wording
+Dion supplied on 8 Sep 2026 plus the privacy section of the FSG.
+
+One edit was needed to make that wording usable. The paragraph Dion sent was written for advisers,
+not clients: it said "you must follow those Principles", referred to "this business31" with a stray
+footnote marker, and instructed the reader that "the client must be made aware of the policy". Read
+by a visitor, "you" means them, so it said the opposite of what was intended. It has been rewritten
+in the first person while keeping every substantive point. Compare it against the source before
+publishing if you want to be certain nothing was lost.
+
+The email signature and the confidentiality and unintended-recipient disclaimers that came through in
+the same email were not used. They are email footers and mean nothing on a public web page. The
+"paper copies of documents" note was kept, reworded for the web, because it is a genuine client
+service statement.
 
 **The two About pages were merged into one.** The old site had separate `dion-kratz.shtml` and
 `erica-kratz.shtml` pages. Both people now live on `about.html` with anchor links (`#dion`, `#erica`),
