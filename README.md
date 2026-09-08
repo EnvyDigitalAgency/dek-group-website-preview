@@ -13,7 +13,7 @@ Replaces the previous `.shtml` site at dekgroup.com.au.
 index.html          Home
 services.html       Our services (4 advice pillars + scope of advice)
 about.html          About us — the practice, Dion and Erica, licensing
-contact.html        Contact details, enquiry form, map
+contact.html        Contact details, enquiry form, locations
 404.html            Not-found page
 .htaccess           Redirects from the old .shtml URLs, https, caching, security headers
 robots.txt          Search engine directives
@@ -64,7 +64,8 @@ translated by the host, or the old URLs will 404.
 ### 3. Check the FSG is the current version
 
 `assets/pdf/DEK-Financial-Services-Guide.pdf` is the version dated **19 May 2026**, taken from the
-existing site. It is linked from the footer of every page, the contact page, the fees section and
+existing site. Its contact section already lists only Dion's mobile and dion@dekgroup.com.au and
+carries no street address, so the site now matches it. It is linked from the footer of every page, the contact page, the fees section and
 the about page. The FSG is a legal requirement, so if a newer version is issued, replace this file
 (keep the same filename and every link keeps working).
 
@@ -80,9 +81,19 @@ come straight from the current FSG, which is already public, and they are a genu
 If DEK would rather not show them, delete the "Fees" section from `index.html` — it is a single
 `<section class="section section--tint">` block and nothing else depends on it.
 
-**The years of experience are carried over from the old site** — "over 14 years" for Dion, "over 10
-years" for Erica. That copy is several years old, so both numbers are almost certainly understated
-now. Worth confirming and updating.
+**Experience figures were confirmed by Dion on 8 Sep 2026**: 25 years for Dion, 20 years for Erica.
+These are stated on the home page and the about page.
+
+**There is deliberately no street address on the site.** Dion asked for the Malvern address to be
+removed and the location changed to Melbourne, Hobart and Sydney. That removes the Google Map, the
+postal address from the structured data, and every mention of Milton Parade. Worth knowing that this
+costs them local search visibility: the old site could rank for "financial planner Malvern" and the
+new one cannot rank for a suburb it does not claim. If they ever want that back, the fix is to
+restore the address block on the contact page and the PostalAddress in the structured data.
+
+**One phone number, Dion's mobile.** The landline was removed at Dion's request. Erica's mobile is
+still shown on her own profile on the about page only. If they want that gone too it is one line to
+delete.
 
 **The two About pages were merged into one.** The old site had separate `dion-kratz.shtml` and
 `erica-kratz.shtml` pages. Both people now live on `about.html` with anchor links (`#dion`, `#erica`),
@@ -112,9 +123,8 @@ Photography was generated for this site rather than licensed from a stock librar
 attribution or licence obligations.
 
 `assets/img/spare/malvern-street-OPTIONAL.jpg` is a generated image of a leafy inner-suburban office
-building. **It is not DEK's actual premises**, so it is deliberately not used on any page — showing
-it on the contact page would imply it is their building. It is kept only in case a decorative
-background is wanted somewhere neutral. A real photo of Milton Parade would be better.
+building. **It is not DEK's actual premises**, so it is not used on any page. Now that the site
+claims no street address at all, it should stay unused. Delete it if you want the folder tidy.
 
 The headshots of Dion and Erica are the **real photos** from the old site, recropped to square. They
 are only about 520px and were shot some years ago, so they are the softest thing on the site. New
