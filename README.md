@@ -22,7 +22,7 @@ assets/css/         styles.css — the whole stylesheet
 assets/js/          main.js — mobile nav, scroll reveals, form handling
 assets/img/         Logos, icons, photography
 assets/img/spare/   Optional extra image, not used on any page (see "Images" below)
-assets/pdf/         DEK-Financial-Services-Guide.pdf
+assets/pdf/         DEK-Financial-Services-Guide.pdf (restyled) + ...-ORIGINAL.pdf
 ```
 
 ---
@@ -37,7 +37,7 @@ which works but is not ideal.
 
 Pick one and replace the `action` attribute:
 
-- **FormSubmit** (free, no account): `action="https://formsubmit.co/erica@dekgroup.com.au"`
+- **FormSubmit** (free, no account): `action="https://formsubmit.co/dion@dekgroup.com.au"`
 - **Formspree** (free tier): `action="https://formspree.io/f/YOUR_FORM_ID"`
 - **A mail script on the host**: `action="/send.php"`
 
@@ -61,16 +61,31 @@ existing links, bookmarks and search rankings are not lost:
 `.htaccess` only works on Apache. If the host runs **nginx or IIS**, these rules must be
 translated by the host, or the old URLs will 404.
 
-### 3. Check the FSG is the current version
+### 3. Get the restyled FSG approved by Betterment (important)
 
-`assets/pdf/DEK-Financial-Services-Guide.pdf` is the version dated **19 May 2026**, taken from the
-existing site. Its contact section already lists only Dion's mobile and dion@dekgroup.com.au and
-carries no street address, so the site now matches it. It is linked from the footer of every page, the contact page, the fees section and
-the about page. The FSG is a legal requirement, so if a newer version is issued, replace this file
-(keep the same filename and every link keeps working).
+The FSG has been **rebuilt in the website's look and feel** at Dion's request. The published file is
+`assets/pdf/DEK-Financial-Services-Guide.pdf` and the editable source is `fsg-source/fsg.html` in the
+project root, with rebuild instructions in `fsg-source/README.md`.
 
-Two places also state the version date in the page text and will need updating alongside it:
-`services.html` (scope of advice note) and `about.html` (documents list).
+The licensee-issued original is kept at `assets/pdf/DEK-Financial-Services-Guide-ORIGINAL.pdf`.
+**Do not delete it.**
+
+**This needs Betterment's sign-off before the site goes live.** The FSG is prepared under the
+authority of Betterment Financial Planning, not DEK. DEK is an authorised representative, so it
+cannot reissue its licensee's disclosure document in a new format on its own. The wording, figures
+and disclosures were reproduced exactly and only the layout changed, but that is Betterment's call to
+confirm, not ours. Reverting is a one line change: point the links back at the ORIGINAL file.
+
+**Two defects in the original that Betterment should fix while they are looking at it.** These were
+carried across as-is rather than silently corrected, because it is not our document to change:
+
+1. The complaints escalation address is incomplete. It reads "132 Nelson Road" with no suburb, state
+   or postcode.
+2. The Betterment complaints contact is Dion's own mobile and email. That defeats the purpose of an
+   escalation path, which is meant to reach someone other than the adviser being complained about.
+
+The version date is also stated in the page text in two places and needs updating alongside any new
+FSG: `services.html` (scope of advice note) and `about.html` (documents list).
 
 ---
 

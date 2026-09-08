@@ -93,7 +93,7 @@
         get('message')
       ].join('\n');
 
-      window.location.href = 'mailto:erica@dekgroup.com.au'
+      window.location.href = 'mailto:dion@dekgroup.com.au'
         + '?subject=' + encodeURIComponent('Website enquiry from ' + (get('name') || 'a visitor'))
         + '&body=' + encodeURIComponent(body);
     });
