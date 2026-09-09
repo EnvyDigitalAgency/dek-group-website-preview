@@ -119,8 +119,12 @@
 
       <!-- ---------- Form ---------- -->
       <div class="reveal">
-        <form class="form" id="enquiry-form" method="post" action="REPLACE_WITH_ENDPOINT" novalidate>
+        <form class="form" id="enquiry-form" method="post" action="/send.php" novalidate>
           <h2 style="font-size:1.5rem">Send an enquiry</h2>
+          <p id="form-error" class="note" hidden style="border-left-color:#C0392B;background:#FDF2F0;margin-bottom:1.2rem">
+            Something went wrong sending that. Please check your name and email address and try again,
+            or call us on <a href="tel:+61484362503">0484 362 503</a>.
+          </p>
           <p style="font-size:.95rem;color:var(--muted);margin-bottom:1.6rem">
             Tell us a little about what you are trying to sort out and we will come back to you.
           </p>

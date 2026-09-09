@@ -63,39 +63,22 @@
   if (year) { year.textContent = new Date().getFullYear(); }
 
   /* ---- Enquiry form ----------------------------------------------------
-     The form posts to whatever action the host provides (FormSubmit,
-     Formspree, or a mail script on the server). Until an endpoint is wired
-     up, it falls back to opening the visitor's mail client so no enquiry is
-     silently lost. See README for how to connect a real endpoint.
+     The form posts to /send.php on the site's own server. The only job left
+     for JavaScript is to surface an error if send.php bounced the submission
+     back with ?error=, and to drop obvious bot submissions early.
   ---------------------------------------------------------------------- */
   var form = document.getElementById('enquiry-form');
   if (form) {
     form.addEventListener('submit', function (e) {
-      // Honeypot: silently drop bot submissions
       var trap = form.querySelector('input[name="_company"]');
-      if (trap && trap.value) { e.preventDefault(); return; }
-
-      var action = form.getAttribute('action') || '';
-      if (action.indexOf('REPLACE_WITH_ENDPOINT') === -1 && action !== '') { return; }
-
-      // No endpoint configured yet — hand off to the visitor's mail client.
-      e.preventDefault();
-      var get = function (n) {
-        var el = form.querySelector('[name="' + n + '"]');
-        return el ? el.value.trim() : '';
-      };
-      var body = [
-        'Name: ' + get('name'),
-        'Email: ' + get('email'),
-        'Phone: ' + get('phone'),
-        'Enquiry about: ' + get('topic'),
-        '',
-        get('message')
-      ].join('\n');
-
-      window.location.href = 'mailto:dion@dekgroup.com.au'
-        + '?subject=' + encodeURIComponent('Website enquiry from ' + (get('name') || 'a visitor'))
-        + '&body=' + encodeURIComponent(body);
+      if (trap && trap.value) { e.preventDefault(); }
     });
   }
+
+  var errBox = document.getElementById('form-error');
+  if (errBox && window.location.search.indexOf('error=') !== -1) {
+    errBox.hidden = false;
+    errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
 })();
